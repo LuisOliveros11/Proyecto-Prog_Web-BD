@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="{% static 'css/estilo_home_user.css'%}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+  <div class="top">
+    <div class="titulo">
+      <p> Reporte Ciudadano</p>
+    </div>
+    <div class="cerrar_Sesion">
+        <a href="{% url 'inicio_sesion' %}">
+          <img src="{% static 'img/cerrar_sesion.png'%}" alt="cerrar sesion">
+          Cerrar sesión
+        </a>
+    </div>
+  </div>
+    <div class="contenedorhome">
+        <div class="card" style="width: 30rem;">
+            <img img src="{% static 'img/reportes.jfif'%}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h1 class="card-title" style="text-align: center;">Lista de reportes</h1>
+              <p class="card-text">Consulta y visualiza a detalle la lista de reportes que has hecho. Observa su categoria, fecha, ubicación y estado actual para ver su seguimiento.</p>
+              <a href="{% url 'lista_reportes' %}" class="btn btn-primary">Ir</a>
+            </div>
+          </div>
+          <div class="card" style="width: 30rem;">
+            <img img src="{% static 'img/llenar_formulario.jpg'%}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h1 class="card-title" style="text-align: center;">Llenar formulario</h1>
+              <p class="card-text">Rellena el formulario para realizar y notificar de un nuevo reporte sobre alguna incidencia que esté ocurriendo en tu localidad a las autoridades.</p>
+              <a href="{% url 'llenar_formulario_user' %}" class="btn btn-primary">Ir</a>
+            </div>
+          </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</html>

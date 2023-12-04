@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Reporte</title>
+    <link rel="stylesheet" href="{% static 'css/estilo_edicion_reporte.css'%}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        #imagen-reporte {
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="titulo">
+        <p> Reporte Ciudadano </p>
+    </div>
+    <div class="subtitulo">
+        <p> Ver reporte </p>
+    </div>
+        <div class="contenedor">
+            <label for=""> Estado del reporte </label>
+            <select class="form-select" aria-label="Default select example" name="estadoReporte" disabled>
+                <option selected>{{ reporte.estatus }}</option>
+              </select>
+            <select class="form-select" aria-label="Default select example" name="categoriaReporte" disabled>
+                <option selected>{{ reporte.categoria }}</option>
+              </select>
+              {% if reporte.evidencia_fotografica %}
+                 <div id="imagen-reporte">
+                     <img src="{{ reporte.evidencia_fotografica.url }}" alt="Evidencia Fotográfica" style="width: 300px; height: 200px;">
+                </div>
+             {% else %}
+                    <p>No hay imagen</p>
+            {% endif %}
+              <div class="inputs">
+                <label for="">Descripción</label>
+                <input type="text" class="form-control" aria-describedby="DescripcionHelp" name="descripcionReporte" value="{{ reporte.descripcion }}" readonly>
+                <label for="">Ubicación</label>
+                <input type="text" class="form-control" aria-describedby="ubicacionHelp" name="ubicacionReporte" value="{{ reporte.ubicacion }}" readonly>
+                <label for="">Fecha de reporte</label>
+                <input type="text" class="form-control" aria-describedby="fechaHelp" name="fechaDeReporte" value="{{ reporte.fecha }}" readonly> 
+
+                <label for="" id="inputComentario">Comentario</label>
+                <input type="text" class="form-control" aria-describedby="comentarioHelp" name="comentarioDeReporte" id="comentarioDeReporte" value="{{ reporte.comentario }}" readonly>
+            </div>
+            <a href="{% url 'lista_reportes_admin' %}">
+                <button type="submit" class="btn btn-primary" request="get">Listo</button>
+            </a>
+        </div>
+</body>
+</html>

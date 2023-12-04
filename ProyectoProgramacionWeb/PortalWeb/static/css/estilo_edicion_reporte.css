@@ -1,0 +1,55 @@
+.titulo{
+    display: flex;
+    justify-content: center;
+    font-size: 70px;
+}
+
+.subtitulo{
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    margin-top: -20px;
+}
+
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 50%;
+    border: solid #000;
+    border-width: 1px 1px;
+    border-radius: 5%;
+    text-align: center;
+}
+
+.contenedor *{
+    margin: 10px;
+}
+
+.contenedor select{
+    width: 40%;
+    height: 7%;
+    border-color:  #000;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    width: 100%;
+    height: 40%;
+ 
+}
+.inputs input{
+    width: 50%;
+    height: 15%;
+    border-color: black;
+}
+
+#comentarioDeReporte{
+    height: 70px;
+}
